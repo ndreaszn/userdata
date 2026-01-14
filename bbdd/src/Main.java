@@ -11,9 +11,8 @@ import java.util.regex.*;
  * (arrays) to and verifies if they match.
  *
  * @author Denise Name
- * @version 1.0
+ * @version 1.1
  */
-
 
 public class Main {
 
@@ -56,6 +55,12 @@ public class Main {
 
     }
 
+    /**
+     *
+     * @param username username inputted by the user
+     * @param user array of valid usernames in the database
+     * @return returns the index of the username in the array, but returns -1 if it isn't found or valid which ends the program
+     */
     public static int confirmUser(String username, String[] user) {
         // loops through all usernames in the array
         for (int i = 0; i < user.length; i++) {
@@ -66,6 +71,13 @@ public class Main {
         return -1; // username not found
     }
 
+    /**
+     *
+     * @param psw the password inputted by user
+     * @param password array of valid passwords in the database
+     * @param index the index from the confirmUser function
+     * @return returns true or false if password matches
+     */
     public static boolean confirmPassword(String psw, String[] password, int index) {
         return password[index].equals(psw); // uses index from the previous function
     }
